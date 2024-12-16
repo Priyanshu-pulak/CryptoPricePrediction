@@ -4,7 +4,6 @@ Cryptocurrency Price Prediction
 
 This project focuses on retrieving historical cryptocurrency data, calculating analytical metrics, and creating a predictive model for price fluctuations. The primary goal was to leverage the CoinGecko API to gather relevant market data and analyze it for future price predictions. By predicting price movements, investors can make more informed decisions in the volatile cryptocurrency market, potentially improving their investment strategies.
 
-
 2. Approach
 
 -> API Selection:
