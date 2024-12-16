@@ -1,0 +1,52 @@
+Cryptocurrency Price Prediction
+
+1. Overview
+
+This project focuses on retrieving historical cryptocurrency data, calculating analytical metrics, and creating a predictive model for price fluctuations. The primary goal was to leverage the CoinGecko API to gather relevant market data and analyze it for future price predictions. By predicting price movements, investors can make more informed decisions in the volatile cryptocurrency market, potentially improving their investment strategies.
+
+
+2. Approach
+
+-> API Selection:
+
+I chose the CoinGecko API for data retrieval due to its comprehensive and free access to cryptocurrency market data. The API covers a wide range of cryptocurrencies and provides various price metrics, including trading volume and market capitalization, over different timeframes. While considering alternatives like the Binance API, I ultimately excluded them due to complexities in data handling and integration.
+
+-> Data Retrieval:
+
+The fetch_crypto_data function retrieves data for specific cryptocurrency pairs, such as Bitcoin and Ethereum, over a 90-day period. The data includes essential price metrics like open, high, low, and close prices. This information is then stored in a pandas DataFrame and exported to an Excel workbook for further analysis. Additional data cleaning steps were implemented to handle missing or inconsistent entries effectively.
+
+-> Metric Calculation:
+
+Subsequent steps involved calculating various metrics, including the percentage difference between predicted prices and actual prices over the next five days. These metrics are crucial for assessing the accuracy of the price predictions and understanding market trends.
+
+-> Model Creation:
+
+A machine learning model was developed to forecast future prices based on historical data. Regression techniques, including linear regression and decision trees, were employed to analyze trends and make predictions. Scikit-learn was utilized for model implementation and evaluation.
+
+
+3. Challenges Faced
+
+(1). Data Availability:
+
+One significant challenge was ensuring the reliability and completeness of the data fetched from the API. Inconsistent data entries were encountered, requiring additional filtering and validation processes to ensure high-quality input for the model.
+
+(2). Model Performance:
+
+Achieving accurate predictions posed another hurdle. The initial model predictions were suboptimal, leading to several iterations in model selection and feature engineering to enhance performance.
+
+
+4. Solutions
+
+(1). Data Cleaning:
+
+To address data quality issues, I implemented additional validation and cleaning steps. Techniques such as interpolation and filling were applied to handle missing values, ensuring that the dataset was robust for analysis.
+
+(2). Model Tuning:
+
+I experimented with various regression algorithms and hyperparameters to improve model performance. Evaluation metrics such as Mean Absolute Error (MAE) and R-squared (R²) were employed to measure the model's success and make iterative improvements.
+
+
+5. Conclusion
+
+This project effectively demonstrates the process of fetching cryptocurrency data, performing analysis, and implementing predictive modeling. The insights gained can assist investors in making informed decisions based on historical trends and future predictions. Future iterations could explore the integration of more advanced algorithms, such as Long Short-Term Memory (LSTM) neural networks, to further enhance predictive accuracy. Overall, this project lays the groundwork for a deeper understanding of cryptocurrency market dynamics and the potential for automated trading strategies.
+
