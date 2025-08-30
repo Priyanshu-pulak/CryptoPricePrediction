@@ -1,0 +1,10 @@
+name: crypto-price-prediction
+channels:
+  - defaults
+dependencies:
+  - python=3.10
+  - pandas
+  - scikit-learn
+  - joblib
+  - requests
+  - openpyxl
