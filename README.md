@@ -7,7 +7,7 @@ This project aims to predict the percentage difference in cryptocurrency prices 
 ## Installation
 
 To install the required packages, run:
-conda env create -f environment.yml
+- conda env create -f environment.yml
 
 ## Project Steps
 
