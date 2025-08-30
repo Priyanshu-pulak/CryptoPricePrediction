@@ -31,6 +31,15 @@ def calculate_metrics(data, variable1, variable2):
     
     # Drop rows with NaN values resulting from rolling calculations
     data.dropna(inplace=True)
+
+    for col in data.columns:
+        if '%' in col:
+            data[col] = data[col].round(4)
+        elif 'Days_Since' in col:
+            data[col] = data[col].astype(int)
+        elif col != 'Date':
+            data[col] = data[col].round(2)
+
     data.to_csv(f'{DATA_DIR}/metrics_data.csv', index=False)
     return data
 
