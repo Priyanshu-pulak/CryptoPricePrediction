@@ -11,7 +11,7 @@ import os
 DATA_DIR = '../data/processed'
 MODELS_DIR = '../models'
 
-data = pd.read_csv(f'{DATA_DIR}/metrics_data.csv')
+data = pd.read_csv(f'{DATA_DIR}/metrics_data_no_outliers.csv')
 
 # Define features (input variables) and targets (output variables)
 X = data[['Days_Since_High_Last_7_Days', '%_Diff_From_High_Last_7_Days', 
