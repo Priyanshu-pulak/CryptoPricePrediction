@@ -7,13 +7,12 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 import joblib
 import os
 
-# Set data and models directory constants
 DATA_DIR = '../data/processed'
 MODELS_DIR = '../models'
 
 data = pd.read_csv(f'{DATA_DIR}/metrics_data_no_outliers.csv')
 
-# Define features (input variables) and targets (output variables)
+# Feature & Target
 X = data[['Days_Since_High_Last_7_Days', '%_Diff_From_High_Last_7_Days', 
     'Days_Since_Low_Last_7_Days', '%_Diff_From_Low_Last_7_Days']]
 
@@ -25,7 +24,6 @@ X_train, X_test, y_high_train, y_high_test, y_low_train, y_low_test = train_test
     X, y_high, y_low, test_size=0.2, random_state=42
 )
 
-# Define models to try
 models = {
     'LinearRegression': LinearRegression(),
     'RandomForest': RandomForestRegressor(random_state=42),
@@ -34,20 +32,18 @@ models = {
     'SVR_rbf': SVR(kernel='rbf')
 }
 
-# Evaluate model performance
+# Evaluating model performance
 def evaluate_model(y_true, y_pred):
     mae = round(mean_absolute_error(y_true, y_pred), 4)
     mse = round(mean_squared_error(y_true, y_pred), 4)
     return {'MAE': mae, 'MSE': mse}
 
-# Train and evaluate for high prediction
 results_high = {}
 for name, model in models.items():
     model.fit(X_train, y_high_train)
     y_pred = model.predict(X_test)
     results_high[name] = evaluate_model(y_high_test, y_pred)
 
-# Train and evaluate for low prediction
 results_low = {}
 for name, model in models.items():
     model.fit(X_train, y_low_train)
