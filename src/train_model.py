@@ -38,8 +38,7 @@ models = {
 def evaluate_model(y_true, y_pred):
     mae = round(mean_absolute_error(y_true, y_pred), 4)
     mse = round(mean_squared_error(y_true, y_pred), 4)
-    r2 = round(r2_score(y_true, y_pred), 4)
-    return {'MAE': mae, 'MSE': mse, 'R2': r2}
+    return {'MAE': mae, 'MSE': mse}
 
 # Train and evaluate for high prediction
 results_high = {}
