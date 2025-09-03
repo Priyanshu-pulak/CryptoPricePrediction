@@ -1,11 +1,9 @@
 import pandas as pd
 import joblib
 
-# Set models directory as a constant
 MODELS_DIR = '../models'
 
 def predict_outcomes(days_since_high, diff_from_high, days_since_low, diff_from_low):
-    # Load the trained models using the MODELS_DIR constant
     model_high = joblib.load(f'{MODELS_DIR}/model_high.pkl')
     model_low = joblib.load(f'{MODELS_DIR}/model_low.pkl')
     
